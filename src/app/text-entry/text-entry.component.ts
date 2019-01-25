@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostEdit } from './post-edit';
 
 @Component({
   selector: 'app-text-entry',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextEntryComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    this.postEntry = new PostEdit();
+  }
 
   ngOnInit() {
   }
+
+  postEntry: PostEdit;
 
 }

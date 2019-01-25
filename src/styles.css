@@ -1,2 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    /*background: linear-gradient(to right,#000428, #004e92);
+    background-repeat: repeat-y;*/
+}
+
+.button-outline-black {
+    width: auto;
+    height: 2rem;
+    border: 0.5px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.button-outline-black:hover {
+    background-color: black;
+    color: white;
+}
