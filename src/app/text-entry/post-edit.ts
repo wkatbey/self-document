@@ -7,5 +7,13 @@ export class PostEdit {
         this.textValue = null;
     }
 
+    clear(): void {
+        this.initializeForm();
+    }
+
+    getText(): string {
+        return this.textValue;
+    }
+
     textValue: string;
 }

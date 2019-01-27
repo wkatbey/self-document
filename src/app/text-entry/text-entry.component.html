@@ -10,7 +10,13 @@
   <div class="col-lg-4"></div>
   <div class="col-lg-5">
     <div class="text-right">
-      <button type="button" class="button-outline-black button-submit-entry">Submit Entry</button>
+      <button type="button" 
+        class="button-outline-black button-submit-entry" 
+        (click)="submitPost()"
+        >Submit Entry</button>
     </div>
   </div>
+</div>
+<div *ngIf="displayPostsView">
+  <app-posts [postList] = "postList"></app-posts>
 </div>
