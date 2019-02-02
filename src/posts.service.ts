@@ -16,8 +16,6 @@ export class PostsService {
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.postsUrl);
-
-
   }
 
   private postsUrl = './app/backend/save_posts.php';
