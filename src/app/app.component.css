@@ -4,3 +4,11 @@
     padding-top: 0.5em;
     padding-bottom: 0.2em;
 }
+
+.slight-curves {
+    border-radius: 10px;
+}
+
+.navbar-pitch-black {
+    background-color: #000000;
+}

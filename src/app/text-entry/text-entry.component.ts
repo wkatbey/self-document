@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostEdit } from './post-edit';
 import { Post } from '../posts/post';
+import { PostsService } from '../../posts.service';
 
 @Component({
   selector: 'app-text-entry',
@@ -9,7 +10,7 @@ import { Post } from '../posts/post';
 })
 export class TextEntryComponent implements OnInit {
 
-  constructor() { 
+  constructor(public postsService: PostsService) { 
     this.postEntry = new PostEdit();
     this.displayPostsView = true;
     this.postList = new Array();
@@ -20,9 +21,7 @@ export class TextEntryComponent implements OnInit {
 
   createPostFromEntry() {
     let currentDate = "11/11/2011";
-    let text = this.postEntry.getText();
-  
-
+    let text = this.postEntry.getText()
     let post = new Post(currentDate, text);
     
     return post;
@@ -35,6 +34,7 @@ export class TextEntryComponent implements OnInit {
   submitPost() {
     let post = this.createPostFromEntry();
     this.postList.push(post);
+    this.postsService.savePost(post);
   }
 
   displayPostsView: boolean;

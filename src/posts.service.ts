@@ -8,15 +8,19 @@ import { Observable, of } from 'rxjs';
 })
 
 export class PostsService {
-
-  constructor(private http: HttpClient) { 
-
-
-  }
+  constructor(private http: HttpClient) { }
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.postsUrl);
+    return this.http.get<Post[]>(this.loadPostsUrl);
   }
 
-  private postsUrl = './app/backend/save_posts.php';
+  savePost(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.savePostUrl, post, this.httpOptions);
+  }
+
+  private loadPostsUrl = './src/app/backend/load-posts.php';
+  private savePostUrl = './app/backend/save-post.php';
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 }

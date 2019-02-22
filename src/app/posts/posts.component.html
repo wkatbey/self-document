@@ -1,14 +1,16 @@
+<div class="row below-navbar">
+  <div class="col-lg-12">
+      <h3 class="text-center page-heading-1">List of Posts</h3>
+  </div>
+</div>
 
-<p>TEST</p>
-<li *ngFor="let post of postList">
-  <p>Sample Text Entry</p>
+<div *ngFor="let post of postList">
+  <div class="row">
+    <div class="col-lg-6">
+        <p>Sample Text Entry</p>
+        <div [innerHTML] = "post.getText()"></div>
+    </div>
+  </div>
   <hr>
-  <div [innerHTML] = "post.getText()"></div>
-  <hr>
-</li>
+</div>
 
-<li *ngFor="let hero of heroes"
-[class.selected]="hero === selectedHero"
-(click)="onSelect(hero)">
-<span class="badge">{{hero.id}}</span> {{hero.name}}
-</li>
